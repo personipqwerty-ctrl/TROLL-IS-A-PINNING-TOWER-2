@@ -61,6 +61,54 @@ Credits:CreateParagraph({
 })
 
 --------------------------------------------------
+-- Map Cleansing Section (Killparts & Groups)
+--------------------------------------------------
+
+Main:CreateSection("Map Cleansing")
+
+Main:CreateButton({
+    Name = "Destroy All Killparts",
+    Callback = function()
+        local count = 0
+        -- Recursively searches everything inside Workspace
+        for _, object in ipairs(workspace:GetDescendants()) do
+            if object:IsA("BasePart") and string.match(object.Name, "^KILLPART%-%d+$") then
+                object:Destroy()
+                count = count + 1
+            end
+        end
+        
+        Rayfield:Notify({
+            Title = "Damage Parts Destroyed",
+            Content = "Successfully destroyed " .. tostring(count) .. "Damage Parts",
+            Duration = 3,
+            Image = 4483362458,
+        })
+    end,
+})
+
+Main:CreateButton({
+    Name = "Destroy Barrier Group"
+    Callback = function()
+        local count = 0
+        -- Recursively searches for any instance named "Group"
+        for _, object in ipairs(workspace:GetDescendants()) do
+            if object.Name == "Group" then
+                object:Destroy()
+                count = count + 1
+            end
+        end
+        
+        Rayfield:Notify({
+            Title = "Barrier Group Destroyed",
+            Content = "Successfully destroyed " .. tostring(count) .. " 'Group' instances!",
+            Duration = 3,
+            Image = 4483362458,
+        })
+    end,
+})
+
+--------------------------------------------------
 -- Auto Gudock
 --------------------------------------------------
 
@@ -266,4 +314,3 @@ Main:CreateToggle({
         end
     end
 })
-
