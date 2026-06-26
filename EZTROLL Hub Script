@@ -67,7 +67,7 @@ Credits:CreateParagraph({
 Main:CreateSection("Map Cleansing")
 
 Main:CreateButton({
-    Name = "Destroy All Killparts",
+    Name = "Destroy All Damage Parts",
     Callback = function()
         local count = 0
         -- Recursively searches everything inside Workspace
@@ -79,8 +79,8 @@ Main:CreateButton({
         end
         
         Rayfield:Notify({
-            Title = "Killparts Destroyed",
-            Content = "Successfully destroyed " .. tostring(count) .. " killparts!",
+            Title = "Damage Parts Destroyed",
+            Content = "Successfully destroyed " .. tostring(count) .. " Damage Parts!",
             Duration = 3,
             Image = 4483362458,
         })
@@ -88,7 +88,7 @@ Main:CreateButton({
 })
 
 Main:CreateButton({
-    Name = "Destroy Group Parts/Models",
+    Name = "Destroy Group Barrier",
     Callback = function()
         local count = 0
         -- Recursively searches for any instance named "Group"
@@ -100,8 +100,8 @@ Main:CreateButton({
         end
         
         Rayfield:Notify({
-            Title = "Groups Destroyed",
-            Content = "Successfully destroyed " .. tostring(count) .. " 'Group' instances!",
+            Title = "Group Barrier Destroyed",
+            Content = "Successfully destroyed " .. tostring(count) .. " 'Group Barrier' instances!",
             Duration = 3,
             Image = 4483362458,
         })
