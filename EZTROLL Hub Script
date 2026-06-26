@@ -79,8 +79,8 @@ Main:CreateButton({
         end
         
         Rayfield:Notify({
-            Title = "Damage Parts Destroyed",
-            Content = "Successfully destroyed " .. tostring(count) .. "Damage Parts",
+            Title = "Killparts Destroyed",
+            Content = "Successfully destroyed " .. tostring(count) .. " killparts!",
             Duration = 3,
             Image = 4483362458,
         })
@@ -88,7 +88,7 @@ Main:CreateButton({
 })
 
 Main:CreateButton({
-    Name = "Destroy Barrier Group"
+    Name = "Destroy Group Parts/Models",
     Callback = function()
         local count = 0
         -- Recursively searches for any instance named "Group"
@@ -100,7 +100,7 @@ Main:CreateButton({
         end
         
         Rayfield:Notify({
-            Title = "Barrier Group Destroyed",
+            Title = "Groups Destroyed",
             Content = "Successfully destroyed " .. tostring(count) .. " 'Group' instances!",
             Duration = 3,
             Image = 4483362458,
