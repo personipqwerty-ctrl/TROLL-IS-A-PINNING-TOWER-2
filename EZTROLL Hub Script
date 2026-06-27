@@ -7,8 +7,8 @@ local Player = Players.LocalPlayer
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "EZTROLL Hub",
-    LoadingTitle = "EZTROLL Hub",
+    Name = "AxoEZ Hub",
+    LoadingTitle = "AxoEZ Hub",
     LoadingSubtitle = "Please wait...",
     Icon = 0,
     Theme = "Default",
@@ -31,6 +31,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local Main = Window:CreateTab("Main", 4483362458)
+local TeleportTab = Window:CreateTab("Teleport", 4483362458)
 local Credits = Window:CreateTab("Credits", 4483362458)
 
 --------------------------------------------------
@@ -40,8 +41,68 @@ local Credits = Window:CreateTab("Credits", 4483362458)
 Main:CreateSection("Hub Information")
 
 Main:CreateParagraph({
-    Title = "EZTROLL Hub",
-    Content = "Welcome to EZTROLL Hub! This is our latest hub, and we hope you enjoy using it. Please don't abuse it, as doing so could get you banned depending on the game or its moderators. 100% Free • No Key Required! :)"
+    Title = "AxoEZ Hub",
+    Content = "Welcome to AxoEZ Hub! This is our latest hub, and we hope you enjoy using it. Please don't abuse it, as doing so could get you banned depending on the game or its moderators. 100% Free • No Key Required! :)"
+})
+
+--------------------------------------------------
+-- Teleport Tab Content
+--------------------------------------------------
+
+TeleportTab:CreateSection("Location Teleports")
+
+TeleportTab:CreateButton({
+    Name = "Teleport Winner Place",
+    Callback = function()
+        local Character = Player.Character
+        if Character then
+            local HRP = Character:FindFirstChild("HumanoidRootPart")
+            if HRP then
+                HRP.CFrame = CFrame.new(
+                    274.781708, 347.146271, -33.9083443, 
+                    0.0361696742, 0, 0.99934566, 
+                    0, 1, 0, 
+                    -0.99934566, 0, 0.0361696742
+                )
+            end
+        end
+    end,
+})
+
+TeleportTab:CreateButton({
+    Name = "Teleport Troll Area 1",
+    Callback = function()
+        local Character = Player.Character
+        if Character then
+            local HRP = Character:FindFirstChild("HumanoidRootPart")
+            if HRP then
+                HRP.CFrame = CFrame.new(
+                    -73.9552841, 147.146271, -75.9713364,
+                    0.00790866744, 8.91219187e-08, -0.999968708,
+                    6.97647025e-08, 1, 8.96764689e-08,
+                    0.999968708, -7.04700035e-08, 0.00790866744
+                )
+            end
+        end
+    end,
+})
+
+TeleportTab:CreateButton({
+    Name = "Teleport Troll Area 2",
+    Callback = function()
+        local Character = Player.Character
+        if Character then
+            local HRP = Character:FindFirstChild("HumanoidRootPart")
+            if HRP then
+                HRP.CFrame = CFrame.new(
+                    -74.0114059, 248.146171, 1.55643821,
+                    0.999587595, -9.47094403e-09, 0.02871157204,
+                    9.74169634e-09, 1, -9.28881327e-09,
+                    -0.02871157204, 9.56475736e-09, 0.999587595
+                )
+            end
+        end
+    end,
 })
 
 --------------------------------------------------
@@ -52,7 +113,7 @@ Credits:CreateSection("Script Information")
 
 Credits:CreateParagraph({
     Title = "Credits",
-    Content = "This script was created by BonkChen (Owner) in collaboration with ACTINGLIKESTUDING. A huge thanks to Rayfield for providing the awesome UI library that made this project possible. Thank you for using EZTROLL Hub! ❤️"
+    Content = "This script was created by BonkChen (Owner) in collaboration with ACTINGLIKESTUDING. A huge thanks to Rayfield for providing the awesome UI library that made this project possible. Thank you for using EZTROLL Hub! "
 })
 
 Credits:CreateParagraph({
